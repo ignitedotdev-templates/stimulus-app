@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./assets//styles.css" />
+    <title>Stimulus App</title>
+    <script type="module">
+      import {
+        Application,
+        Controller,
+      } from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js";
+      window.Stimulus = Application.start();
+
+      Stimulus.register(
+        "hello",
+        class extends Controller {
+          static targets = ["name"];
+
+          connect() {}
+        }
+      );
+    </script>
+    <script src="./app.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="">
+        <img src="./assets/logo.svg" alt="logo" className="logo" />
+      </div>
+      <div class="container">
+        <div class="inner-container">
+          <h2 class="header">
+            You’ve just ignited a new
+            <span class="library">Stimulus</span> static site!
+          </h2>
+          <span class="pathname" id="pathname"> </span>
+        </div>
+        <p class="footer">Made in Nigeria with 💖</p>
+      </div>
+    </main>
+  </body>
+</html>
